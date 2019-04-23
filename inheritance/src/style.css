@@ -1,0 +1,19 @@
+.borderi-blue{
+    background-color:cadetblue;
+    border: 1px solid blue;
+    border-radius: 1em;
+    width: 50%;
+    margin: 0 auto 0 auto;
+    padding: 1em;
+    direction: rtl;
+}
+.Dialog-title{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: white;
+}
+.Dialog-message{
+    font-family: tahoma;
+    text-align: center;
+    color: black;
+}
