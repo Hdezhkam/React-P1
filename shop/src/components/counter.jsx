@@ -5,28 +5,44 @@ import {
 } from 'reactstrap';
 
 class Counter extends Component {
-    render() { 
-        return ( 
+    render() {
+        const {
+            counter,
+            onDelete,
+            onIncrement
+        } = this.props;
+        return (
             <div>
-                <Badge color="info" className="m-2">
-                    Toplearn
+                <Badge color={this.getBadgeColor()} className="m-2">
+                    {this.formatCount()}
                 </Badge>
                 <Button
                     color="danger"
                     className="btn-sm m-2"
+                    onClick={() => onDelete(counter.id)}
                 >
-                    Cancel    
+                    Delete
                 </Button>
-                <Button 
+                <Button
                     color="primary"
                     className="btn-sm"
+                    onClick={() => onIncrement(counter)}
                 >
-                    Increase
+                    Increament
                 </Button>
             </div>
 
-         );
+        )
+    }
+
+    getBadgeColor() {
+        return this.props.counter.value === 0 ? 'warning' : 'primary';
+    }
+
+    formatCount() {
+        const { value } = this.props.counter;
+        return value === 0 ? '0' : value;
     }
 }
- 
+
 export default Counter;

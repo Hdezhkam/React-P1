@@ -1,11 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import App from './App';
-//import ServiceWorker from './serviceWorker';
+import App from './App';
+//import registerServiceWorker from './registerServiceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
-//import Counter from './components/counter';
-import Counters from './components/counters';
 
-ReactDOM.render(<Counters />, document.getElementById('root'));
-//ServiceWorker();
+ReactDOM.render(<App />, document.getElementById('root'));
+//registerServiceWorker();
