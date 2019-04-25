@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import getPosts from './../services/fakePosts';
 import Like from './../like';
+import Pagination from './pagination';
 
 
 class Posts extends Component {
@@ -51,6 +52,7 @@ class Posts extends Component {
                         </div>
                     </div>
                 ))}
+                <Pagination />
             </React.Fragment>
         );
     }
