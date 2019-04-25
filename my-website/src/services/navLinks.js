@@ -1,16 +1,16 @@
 const navLinks = [
-    { id: 1, text: 'صفحه اصلی', link: '#', icon: 'fa fa-home feather' },
+    { id: 1, text: 'Home', link: '#', icon: 'fa fa-home feather' },
     {
         id: 2,
-        text: 'دوره ها',
+        text: 'Certificates',
         link: '#',
-        count: 5,
+        count: 2,
         icon: 'fa fa-graduation-cap feather'
     },
-    { id: 3, text: 'تحصیلات', link: '#', icon: 'fa fa-university feather' },
-    { id: 4, text: 'مهارت', link: '#', icon: 'fa fa-briefcase feather' },
-    { id: 5, text: 'درباره', link: '#', icon: 'fa fa-user feather' },
-    { id: 6, text: 'تماس', link: '#', icon: 'fa fa-envelope feather' }
+    { id: 3, text: 'Education', link: '#', icon: 'fa fa-university feather' },
+    { id: 4, text: 'Skills', link: '#', icon: 'fa fa-briefcase feather' },
+    { id: 5, text: 'About Us', link: '#', icon: 'fa fa-user feather' },
+    { id: 6, text: 'Contact', link: '#', icon: 'fa fa-envelope feather' }
 ];
 
 const getNavLinks = () => {
