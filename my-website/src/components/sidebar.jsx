@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import getNavLinks from '../services/navLinks';
+import UserInfo from './common/userInfo';
 
 class Sidebar extends Component {
     render() {
@@ -7,13 +8,11 @@ class Sidebar extends Component {
         return (
             <nav className="col-md-2 d-none d-md-block bg-light sidebar">
                 <div className="sidebar-sticky">
-                    <div className="text-center">
-                        <img src="https://via.placeholder.com/200x200" className="img-thumbnail img-fluid" alt="" />
-                        <span className="card bg-info shadow user-fullname">
-                            Hamid Dezhkam
-                        </span>
-                        <p>Front End Web Developer</p>
-                    </div>
+                    <UserInfo 
+                        imgUrl="https://lh3.googleusercontent.com/-E8HGRIybCoQ/XIl4z1G9KvI/AAAAAAAAMYU/yKfNNCMht_gCIPIG3OF1TcFz6UTe21hKQCEwYBhgL/w140-h139-p/IMG-2376.JPG"
+                        fullname="Hamid Dezhkam"
+                        text="Front End Web Developer"
+                    />
                     <hr className="shadow"/>
                     <ul className="nav flex-column">
                         {navLinks.map(nav => (
