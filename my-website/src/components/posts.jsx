@@ -3,6 +3,7 @@ import getPosts from './../services/fakePosts';
 import Like from './../like';
 import Pagination from './pagination';
 import { paginate } from './../utils/paginate';
+
 class Posts extends Component {
     state = {
         posts: [],

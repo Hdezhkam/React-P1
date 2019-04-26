@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import Navbar from './components/navbar';
 import Sidebar from './components/sidebar';
 import Posts from './components/posts';
 import Footer from './components/footer';
-
+import Education from './components/education';
+import Skills from './components/skills';
+import About from './components/about';
+import Contact from './components/contact';
+import Courses from './components/courses';
 
 
 class App extends Component {
@@ -15,11 +20,18 @@ class App extends Component {
                     <div className="row">
                         <Sidebar />
                         <main role="main" className="col-md-9 ml-sm-auto col-lg-10 px-4">
-                            <Posts />
+                            <Switch>
+                                <Route path="/education" component={Education} />
+                                <Route path="/about" component={About} />
+                                <Route path="/contact" component={Contact} />
+                                <Route path="/courses" component={Courses} />
+                                <Route path="/skills" component={Skills} />
+                                <Route path="/" component={Posts} />
+                            </Switch>
                         </main>
                     </div>
                 </div>
-                <Footer/>
+                <Footer />
             </React.Fragment>
         )
     }
