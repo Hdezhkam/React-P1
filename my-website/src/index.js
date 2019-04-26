@@ -6,6 +6,7 @@ import 'font-awesome/css/font-awesome.css';
 import './css/index.css';
 import './css/navbar.css';
 import './css/sidebar.css';
+import './css/login.css';
 import App from './App';
 import Login from './components/login';
 //import * as serviceWorker from './serviceWorker';
