@@ -2,24 +2,43 @@ import React, { Component } from 'react';
 import getPosts from './../services/fakePosts';
 import Like from './../like';
 import Pagination from './pagination';
-
-
+import { paginate } from './../utils/paginate';
 class Posts extends Component {
     state = {
         posts: [],
         currentPage: 1,
         pageSize: 5
-    }
+    };
 
     componentDidMount() {
         const posts = getPosts();
-        this.setState({ posts: posts });
+        this.setState({ posts });
     }
+
+    handlepageChange = page => {
+        this.setState({ currentPage: page });
+    };
+
+    getPageData = () => {  //for pagination
+        const { pageSize, currentPage, posts: allPosts } = this.state;
+        const posts = paginate(allPosts, currentPage, pageSize);
+
+        return {
+            totalCount: allPosts.length,
+            data: posts
+        }
+    };
+
     render() {
-        const { posts } = this.state;
+        const { pageSize, currentPage } = this.state;
+        const { length: count } = this.state.posts;
+
+        if (count === 0) return <p>No Posts for Show</p>
+
+        const { totalCount, data } = this.getPageData();
         return (
             <React.Fragment>
-                {posts.map(post => (
+                {data.map(post => (
                     <div className="container-fluid" key={post.id}>
                         <div className="card shadow-lg bg-light m-2">
                             <article className="p-3">
@@ -31,7 +50,7 @@ class Posts extends Component {
                                         <span className="fa fa-calendar m-2" />
                                         {post.postDate}
                                     </span>
-                                    <img className="card-img" src="post.postImageUrl" alt="" />
+                                    <img className="card-img" src={post.postImageUrl} alt="" />
                                 </div>
                                 <div className="card-body">
                                     <p className="card-text">
@@ -44,7 +63,9 @@ class Posts extends Component {
                                             <span className="fa fa-link m-1" />
                                             Labels:
                                         </li>
-                                        <li className="list-inline-item"><a href="#">{post.postTags}</a></li>
+                                        <li className="list-inline-item">
+                                            <a href="#">{post.postTags}</a>
+                                        </li>
                                     </ul>
                                     <Like post={post} />
                                 </div>
@@ -52,7 +73,12 @@ class Posts extends Component {
                         </div>
                     </div>
                 ))}
-                <Pagination />
+                <Pagination 
+                    itemCount={totalCount}
+                    pageSize={pageSize}
+                    currentPage={currentPage}
+                    onPageChange={this.handlePageChange}
+                />
             </React.Fragment>
         );
     }
