@@ -1,14 +1,64 @@
 import React from 'react';
 
 const Contact = () => {
+    {/* const mapObj = {
+        key: '',
+        type: 'neshan',
+        zoom: 14,
+        lat: '',
+        long: '',
+        width: 500,
+        height: 400,
+        marker: 'none'
+    };
+
+    const mapUrl = `https://api.neshan.org/v1/static?key=${mapObj.key}&type=${
+        mapObj.type
+    }&zoom=${mapObj.zoom}&center=${mapObj.lat},${mapObj.long}&width=${
+        mapObj.width
+    }&height=${mapObj.height}&marker=${mapObj.marker}`;
+*/}
     return (
         <div className="container-fluid">
             <div className="row bg-light border rounded m-2">
-                <div className="col">
+                <div className="col-6 mt-3">
                     <p className="lead m-2">
-                        <span className="fa fa-envelope m-1" />
-                        Contact Information:
+                        {/* <span className="fa fa-envelope m-1" />
+                        Contact:*/}
                     </p>
+                    <div className="col">
+                        <p className="m-2 mt-2">
+                            <span className="fa fa-envelope-open" />
+                            <span
+                                style={{
+                                    fontFamily: 'sans-serif'
+                                }}
+                                className="m-2 font-weight-bold"
+                            >
+                                hamid.dezhkam@gmail.com
+                            </span>
+                        </p>
+                        <p className="m-2 mt-2">
+                            <span className="fa fa-github" />
+                            <span
+                                style={{
+                                    fontFamily: 'sans-serif'
+                                }}
+                                className="m-2 font-weight-bold"
+                            >
+                                Hdezhkam
+                            </span>
+                        </p>
+                        <p className="m-2">
+                            <span className="fa fa-address-card" />
+                            <span className="m-2 font-weight-bold">1/38 Maidstone Street,Ringwood,VIC, Australia</span>
+                        </p>
+                        {/*<img
+                            className="img-fluid img-thumbnail m-2"
+                            src={mapUrl}
+                            alt="Map"
+                        />*/}
+                    </div>
                 </div>
                 <div className="col-6">
                     <form>
@@ -19,7 +69,7 @@ const Contact = () => {
                                         <i className="fa fa-envelope" /> Contact Information Form
                                     </h3>
                                     <p className="m-0">
-                                    Please fill and send
+                                        Please fill and send
                                     </p>
                                 </div>
                             </div>
@@ -83,6 +133,7 @@ const Contact = () => {
                         </div>
                     </form>
                 </div>
+
             </div>
         </div>
     );

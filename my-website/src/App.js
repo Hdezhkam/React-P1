@@ -10,7 +10,6 @@ import About from './components/about';
 import Contact from './components/contact';
 import Courses from './components/courses';
 
-
 class App extends Component {
     render() {
         return (
@@ -24,8 +23,9 @@ class App extends Component {
                             <Route path="/about" component={About} />
                             <Route path="/contact" component={Contact} />
                             <Route path="/courses" component={Courses} />
+                             {/*<Redirect from="/skills" to="/not-found" /> */}       
                             <Route path="/skills" component={Skills} />
-                            <Route path="/" component={Posts} />
+                            <Route path="/" exact component={Posts} />
                             <Redirect to="/not-found" />
                         </Switch>
                     </main>
