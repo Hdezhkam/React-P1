@@ -13,13 +13,13 @@ const adminNavLinks = [
     },
     {
         id: 3,
-        text: 'ساخت دوره جدید',
+        text: 'Create Courses',
         link: '/admin/create-course',
         icon: 'fa fa-plus feather'
     },
     {
         id: 4,
-        text: 'لیست دوره ها',
+        text: 'Courses List',
         link: '/admin/allcourses',
         icon: 'fa fa-list feather'
     }

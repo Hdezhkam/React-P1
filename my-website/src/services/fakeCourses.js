@@ -5,8 +5,8 @@ const courses = [
         imageUrl:
             '#',
         text: 'Test',
-        time: '10:11:00',
-        price: 50000
+        time: '50:00:00',
+        price: 0
     },
     {
         id: 1,
@@ -14,8 +14,8 @@ const courses = [
         imageUrl:
             '#',
         text: 'Test',
-        time: '10:11:00',
-        price: 100000
+        time: '50:00:00',
+        price: 0
     },
     {
         id: 1,
@@ -23,8 +23,8 @@ const courses = [
         imageUrl:
             '#',
         text: 'Test',
-        time: '10:11:00',
-        price: 80000
+        time: '50:00:00',
+        price: 0
     },
     {
         id: 1,
@@ -32,8 +32,8 @@ const courses = [
         imageUrl:
             '#',
         text: 'Test',
-        time: '10:11:00',
-        price: 80000
+        time: '50:00:00',
+        price: 0
     }
 ];
 
