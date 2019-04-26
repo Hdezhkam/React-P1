@@ -11,13 +11,15 @@ import './css/404.css';
 import App from './App';
 import Login from './components/login';
 import NotFound from './components/notFound';
+import Dashboard from './components/admin/dashboard';
 
 //import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render( 
     <BrowserRouter>
         <Switch>  
-            <Route path="/login" component={Login}/>
+            <Route path="/login" component={Login} />
+            <Route path="/admin" component={Dashboard} />
             <Route path="/not-found" component={NotFound} />
             <Route path="/" component={App} /> 
         </Switch> 
