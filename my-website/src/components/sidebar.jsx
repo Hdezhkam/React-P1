@@ -22,7 +22,7 @@ class Sidebar extends Component {
                                 <span className={nav.icon}/>
                                 <span className="m-2">{nav.text}</span>
                                 {nav.count ? (
-                                    <span className="badge-danger badge-pill">
+                                    <span className="badge-primary badge-pill">
                                         {nav.count}
                                     </span>
                                 ) : null}
