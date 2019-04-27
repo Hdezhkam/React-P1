@@ -19,7 +19,13 @@ ReactDOM.render(
     <BrowserRouter>
         <Switch>  
             <Route path="/login" component={Login} />
-            <Route path="/admin" component={Dashboard} />
+            <Route 
+            path="/admin" 
+            render={() => {
+                if (localStorage.getItem('token')) return <Dashboard />;
+                else return <Redirect to="/" />;
+            }}
+             />
             <Route path="/not-found" component={NotFound} />
             <Route path="/" component={App} /> 
         </Switch> 

@@ -17,6 +17,10 @@ export function getPostsCount() {
     return http.get(config.api_post + '/count');
 }
 
+export function incPostLike(postId) {
+    return http.put(`${config.api_post}/like/${postId}`);
+}
+
 export function updatePost(post) {
     const body = { ...post };
     delete body._id;

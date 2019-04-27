@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import { getCourseCount } from '../services/courseService';
 import getNavLinks from '../services/navLinks';
 import UserInfo from './common/userInfo';
 
 class Sidebar extends Component {
+    state = {
+        courseCount: ''
+    };
+    async componentDidMount() {
+        const {data: courseCount} = await getCourseCount();
+        this.setState({courseCount: courseCount.count});
+    }
     render() {
         const navLinks = getNavLinks();
         return (
@@ -21,9 +29,9 @@ class Sidebar extends Component {
                             <Link className="nav-link" to={nav.link}>
                                 <span className={nav.icon}/>
                                 <span className="m-2">{nav.text}</span>
-                                {nav.count ? (
+                                {nav.text ==='Courses'? (
                                     <span className="badge-primary badge-pill">
-                                        {nav.count}
+                                        {this.state.courseCount}
                                     </span>
                                 ) : null}
                             </Link>
