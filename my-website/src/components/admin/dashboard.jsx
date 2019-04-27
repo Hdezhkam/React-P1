@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import Navbar from './navbar';
 import Sidebar from './sidebar';
 import CreatePost from './creatPost';
 import AllPosts from './allPosts';
 import CreateCourses from './createCourses';
 import AllCourses from './allCourses';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -14,6 +16,7 @@ class Dashboard extends Component {
     render() {
         return (
             <div className="container-fluid">
+                <ToastContainer />
                 <Navbar />
                 <div className="row">
                     <Sidebar />

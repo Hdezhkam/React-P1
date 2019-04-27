@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 class CreateCourses extends Component {
     state = {
         title: '',
@@ -10,8 +11,6 @@ class CreateCourses extends Component {
 
 handleSubmit = e => {
     e.preventDefault();
-
-    console.log(this.state);
 };
 
 render() {

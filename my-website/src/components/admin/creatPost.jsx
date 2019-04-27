@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
+import { createPost } from '../../services/postService';
+import { toast } from 'react-toastify';
+import config from '../../config.json';
 
 class CreatePost extends Component {
     state = {
@@ -9,10 +12,19 @@ class CreatePost extends Component {
         postTags: []
     };
 
-    handleSubmit = e => {
+    handleSubmit = async e => {
         e.preventDefault();
 
-        console.log(this.state);
+        try {
+            const result = await createPost(
+                JSON.parse(JSON.stringify(this.state))
+            );
+
+            if (result.status === 200) toast.success('Post Created Successfuly');
+        } catch (ex) {
+            if (ex.response && ex.response.status === 400)
+                toast.error('Please Fill All Gaps');
+        }
     };
 
     render() {
