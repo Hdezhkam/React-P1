@@ -7,6 +7,8 @@ import CreatePost from './creatPost';
 import AllPosts from './allPosts';
 import CreateCourses from './createCourses';
 import AllCourses from './allCourses';
+import EditPost from './editPost';
+import EditCourse from './editCourse';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -26,6 +28,8 @@ class Dashboard extends Component {
                             <Route path="/admin/allposts" component={AllPosts} />
                             <Route path="/admin/create-course" component={CreateCourses} />
                             <Route path="/admin/allCourses" component={AllCourses} />
+                            <Route path="/admin/editPost" component={EditPost} />
+                            <Route path="/admin/editCourse" component={EditCourse} />
                         </Switch>
                     </main>
                 </div>
